@@ -1,0 +1,14 @@
+Temp/*
+Library/*
+obj/*
+Sleep.sln.DotSettings.user
+sleep.csproj
+Sleep.userprefs
+.vs/Sleep/v14/.suo
+Sleep.sln
+*.csproj
+.idea/*
+Logs
+Packages
+*.sln
+.DS_Store
