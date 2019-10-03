@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 
-namespace SpriteShadows.Rendering.Lighting.Code
+namespace SpriteShadows.Scripts
 {
     public class LitRenderer : MonoBehaviour
     {
         public SpriteRenderer renderer;
         public Color shadowColor = Color.black;
-        public Mesh shadowMesh;
-        
+        [HideInInspector] public Mesh shadowMesh;
+
         private static int _litForegroundLayer = -1;
 
-        public bool ShadowCaster
-        {
-            get { return renderer.sortingLayerID == _litForegroundLayer; }
-        }
+        public bool ShadowCaster => renderer.sortingLayerID == _litForegroundLayer;
 
         private void Awake()
         {
@@ -26,24 +23,7 @@ namespace SpriteShadows.Rendering.Lighting.Code
         #region Editor        
 
 #if UNITY_EDITOR
-        public bool generateShadowMesh;
-        public bool drawGizmos;
-
-        protected virtual void GenerateShadowDataEditor()
-        {
-            var polygonCollider = gameObject.AddComponent<PolygonCollider2D>();
-            shadowMesh = ShadowVolumeUtil.CreateMeshWithoutProjection(polygonCollider);
-            UnityEditor.EditorApplication.delayCall += () => DestroyImmediate(polygonCollider);
-        }
-
-        private void OnValidate()
-        {
-            if (generateShadowMesh)
-            {
-                generateShadowMesh = false;
-                GenerateShadowDataEditor();
-            }
-        }
+        [SerializeField] private bool drawGizmos;
 
         private void OnDrawGizmosSelected()
         {

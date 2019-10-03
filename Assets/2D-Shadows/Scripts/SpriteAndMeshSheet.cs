@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpriteShadows.Rendering.Lighting.Code
+namespace SpriteShadows.Scripts
 {
     [Serializable]
     public class SpriteAndMesh : SpriteAndSomething<Mesh>

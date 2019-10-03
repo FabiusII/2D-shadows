@@ -1,4 +1,4 @@
-﻿using SpriteShadows.Rendering.Lighting.Code;
+﻿using SpriteShadows.Scripts;
 using UnityEngine;
 
 namespace SpriteShadows.Example

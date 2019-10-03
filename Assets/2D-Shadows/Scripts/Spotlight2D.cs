@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Serialization;
 
-namespace SpriteShadows.Rendering.Lighting.Code
+namespace SpriteShadows.Scripts
 {
     public abstract class Spotlight2D : MonoBehaviour
     {
@@ -155,28 +154,5 @@ namespace SpriteShadows.Rendering.Lighting.Code
             _shadowPass.SetRenderTarget(shadowMap);
             _shadowPass.ClearRenderTarget(true, true, _clearColor);
         }
-
-        #region Editor
-
-#if UNITY_EDITOR
-        public bool drawLightCone;
-
-        private void OnDrawGizmos()
-        {
-            if (drawLightCone && _lightMesh != null)
-            {
-                Gizmos.color = color;
-                Gizmos.DrawWireMesh(_lightMesh);
-            }
-        }
-
-        private void OnValidate()
-        {
-            Shader.SetGlobalColor("_AmbientLight", ambientLight * ambientColor);
-            Shader.SetGlobalColor("_SpotlightColor", color);
-        }
-#endif
-
-        #endregion
     }
 }

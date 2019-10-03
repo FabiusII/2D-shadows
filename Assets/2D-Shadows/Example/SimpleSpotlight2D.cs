@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using SpriteShadows.Rendering.Lighting.Code;
+using SpriteShadows.Scripts;
 
 namespace SpriteShadows.Example
 {

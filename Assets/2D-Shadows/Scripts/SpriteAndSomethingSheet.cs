@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpriteShadows.Rendering.Lighting.Code
+namespace SpriteShadows.Scripts
 {
     public abstract class SpriteAndSomething<T>
     {

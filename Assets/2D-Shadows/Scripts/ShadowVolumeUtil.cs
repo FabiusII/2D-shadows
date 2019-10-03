@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpriteShadows.Rendering.Lighting.Code
+namespace SpriteShadows.Scripts
 {
     public static class ShadowVolumeUtil
     {
